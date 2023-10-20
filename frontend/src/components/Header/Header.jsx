@@ -1,5 +1,6 @@
 import {useEffect,useRef} from 'react'   
 import logo from './../../assets/images/logo.png'
+import userImg from './../../assets/images/client-avatar.png'
 import {NavLink, Link} from 'react-router-dom'
 
 const navLinks = [
@@ -41,8 +42,8 @@ const Header = () => {
                                     to={link.path}
                                     className={navClass =>
                                     navClass.isActive
-                                    ? 'text-primaryColor text-{16px leading-7 font-[600]'
-                                    : 'text-textColor text-[16px] leading-7 font-[500] hover:text-primaryColor'
+                                    ? 'text-yellowColor text-{16px leading-7 font-[600]'
+                                    : 'text-textColor text-[16px] leading-7 font-[500] hover:text-yellowColor'
                                     }
                                     
                                     >{link.name}</NavLink>
@@ -50,6 +51,17 @@ const Header = () => {
                             ))
                         }
                     </ul>
+                </nav>
+                {/* === MENU right === */}
+
+                <nav className='flex items-center gap-4'>
+                    <div>
+                        <Link to='/' >
+                            <figure className='w-[35px] h-[35px] rounded-full cursor-pointer'>
+                                <img src={userImg} className='w-full rounded-full' alt="" />
+                            </figure>
+                        </Link>
+                    </div>
                 </nav>
             </div>
         </div>
