@@ -12,11 +12,12 @@ export default {
         purpleColor:"#9771FF",
         irisBlueColor:"#01B5C5",
         headingColor:"#181A1E",
-        textColor:"#4E545F"
+        textColor:"#4E545F",
+        celesteColor:"#00a8eb"
       },
 
       boxShadow:{
-        panelShadow:"#rgba(17, 12, 46, 0.15) 0px 48px 100px 0px"
+        panelShadow:"rgba(17, 12, 46, 0.15) 0px 48px 100px 0px"
       }
     },
   },

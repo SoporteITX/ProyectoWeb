@@ -6,12 +6,13 @@ export const devs = [
   {
     id: "01",
     name: "Dev. Chris Gámez",
-    specialty: "React JS",
+    specialty: "React JS, NodeJS",
     avgRating: 4.8,
     totalRating: 272,
     photo: devImg01,
     totalProjects: 8,
     country: "Colombia",
+    lastCompany: "AtlasDev"
   },
   {
     id: "02",
@@ -22,6 +23,7 @@ export const devs = [
     photo: devImg02,
     totalProjects: 15,
     country: "India",
+    lastCompany: "Amazon .inc"
   },
   {
     id: "03",
@@ -32,5 +34,6 @@ export const devs = [
     photo: devImg03,
     totalProjects: 13,
     country: "USA",
+    lastCompany: "Softevolution"
   },
 ];

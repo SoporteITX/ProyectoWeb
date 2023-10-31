@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react'
 
 const DevelopersDetails = () => {
-    return (
-        <div>DevelopersDetails</div>
-    )
+  return (
+    <div>DevelopersDetails</div>
+  )
 }
 
-export default DevelopersDetails;
+export default DevelopersDetails

@@ -1,72 +1,108 @@
-import {useEffect,useRef} from 'react'   
-import logo from './../../assets/images/logo.png'
+import {useEffect, useRef} from 'react'
+import logo from './../../assets/images/ITX_Logos_FondoBlancov4-4.png'
 import userImg from './../../assets/images/client-avatar.png'
-import {NavLink, Link} from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
+import { BiMenu } from 'react-icons/bi'
+
 
 const navLinks = [
-    {
-        name: 'Inicio',
-        path: '/home'
-    },
-    {
-        name: 'Buscar Dev',
-        path: '/developers'
-    },
-    {
-        name: 'Servicios',
-        path: '/services'
-    },
-    {
-        name: 'Contacto',
-        path: '/contact'
-    }
+  {
+    name: "Inicio",
+    path: "/home"
+  },
+  {
+    name: "Plataforma de servicios",
+    path: "/service"
+  },
+  {
+    name: "Clientes",
+    path: "/developers"
+  },
+  {
+    name: "Contacto",
+    path: "/contact"
+  },
 ]
 
 const Header = () => {
-    return (
-    <header className='header flex items-center'>
-        <div className="container">
-            <div className="flex item-center justify-between">
-                {/* =====LOGO====*/}
-                <div>
-                    <img src={logo} alt="" />
-                </div>
+  const headerRef = useRef(null)
+  const menuRef = useRef(null)
 
-                {/* === MENU === */}
-                <nav className="navigation">
-                    <ul className='menu flex items-center gap-[2.7rem]'>
-                        {
-                            navLinks.map((link,index) => (
-                                <li key={index}>
-                                    <NavLink 
-                                    to={link.path}
-                                    className={navClass =>
-                                    navClass.isActive
-                                    ? 'text-yellowColor text-{16px leading-7 font-[600]'
-                                    : 'text-textColor text-[16px] leading-7 font-[500] hover:text-yellowColor'
-                                    }
-                                    
-                                    >{link.name}</NavLink>
-                                </li>
-                            ))
-                        }
-                    </ul>
-                </nav>
-                {/* === MENU right === */}
+  const handleStickyHeader = () => {
+    window.addEventListener('scroll', () =>{
+    if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+      headerRef.current.classList.add("sticky__header")
+    } else {
+      headerRef.current.classList.remove("sticky__header")
+    }
+  })
 
-                <nav className='flex items-center gap-4'>
-                    <div>
-                        <Link to='/' >
-                            <figure className='w-[35px] h-[35px] rounded-full cursor-pointer'>
-                                <img src={userImg} className='w-full rounded-full' alt="" />
-                            </figure>
-                        </Link>
-                    </div>
-                </nav>
-            </div>
+  }
+
+  useEffect(() => {
+    handleStickyHeader()
+    return () => window.removeEventListener('scroll',handleStickyHeader)
+  });
+
+  const toggleMenu = () => menuRef.current.classList.toggle('show__menu');
+
+
+  return (
+    <header className='header flex items-center' ref={headerRef}>
+      <div className="container">
+        <div className="flex items-center justify-between">
+          {/* ==== LOGO ==== */}
+          <div>
+          <Link to='/' >
+                <img src={logo} alt="" width={90} height={90} />
+          </Link>
+          </div>
+
+          {/* ==== MENU ==== */}
+          <nav className="navigation" ref={menuRef} onClick={toggleMenu}>
+            <ul className='menu flex items-center gap-[2.7rem]'>
+              {
+                navLinks.map((link, index) => (
+                  <li key={index}>
+                    <NavLink
+                    to={link.path}
+                    className={navClass =>
+                    navClass.isActive
+                    ? 'text-celesteColor text-[16px] leading-7 font-[600]'
+                    : 'text-textColor text-[16px] leading-7 font-[500] hover:text-celesteColor'}
+                    >{link.name}</NavLink>
+                  </li>
+                ))
+              }
+            </ul>
+          </nav>
+
+          {/* ==== MENU right ==== */}
+            <nav className='flex items-center gap-4'>
+              <div className='hidden'>
+                <Link to="/" >
+                  <figure className='w-[35px] h-[35px] rounded-full cursor-pointer'>
+                    <img src={userImg} className='w-full rounded-full' alt="" />
+                  </figure>
+                </Link>
+              </div>
+                {/*
+                <Link to="/login" >
+                  <button className='bg-yellowColor py-2 px-6 text-white font-[600] h-[44px] flex items-center justify-center rounded-[50px]'>
+                    Login
+                  </button>
+                </Link> 
+            */}
+                <span className='md:hidden' onClick={toggleMenu}>
+                  <BiMenu className="w-6 h-6 cursor-pointer"/>
+                </span>
+
+            </nav>    
+
         </div>
+      </div>
     </header>
-    )
+  )
 }
 
 export default Header
