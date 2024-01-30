@@ -1,78 +1,58 @@
 import React from 'react'
-import heroImg01 from './../assets/images/administración ti.jpg'
-import heroImg02 from './../assets/images/technology-security.jpg'
-import heroImg03 from './../assets/images/Soporte-tecnico.jpg'
-import icon01 from './../assets/images/icon01.png'
-import icon02 from './../assets/images/icon02.png'
-import icon03 from './../assets/images/icon03.png'
-import featureImg from './../assets/images/feature-img.png'
-import videoIcon from './../assets/images/video-icon.png'
-import avatarIcon from './../assets/images/avatar-icon.png'
-import faqImg from './../assets/images/faq-img.png'
-import { Link } from 'react-router-dom'
-import { BsArrowRight } from 'react-icons/bs'
+import heroImg01 from './../assets/images/Soporte-tecnico.jpg'
 import exp from './../assets/images/experiencia.jpg'
-import About from '../components/About/About'
 import ServiceList from '../components/Services/ServiceList'
-import DevList from '../components/Devs/DevList'
-import FaqsList from '../components/Faqs/FaqsList'
 import Testimonial from '../components/Testimonial/Testimonial'
+import Certificaciones from '../components/Testimonial/Certificaciones'
+
 
 const Home = () => {
+  
+  const inputStyles = {
+    width: '100%',
+    border: '1px solid #888',
+    borderRadius: '4px',
+    padding: '8px',
+  };
+
+  const buttonStyles = {
+    border: 'none',
+    borderRadius: '5px',
+    padding: '10px 20px',
+    backgroundColor: '#5491f5',
+    color: 'white',
+    fontWeight: 'bold',
+    cursor: 'pointer',
+    textShadow: '1px 1px 1px rgba(0, 0, 0, 0.3)',
+    boxShadow: '2px 2px 4px rgba(0, 0, 0, 0.1)',
+  };
   return (
     <>
+
       {/* ======== hero section ========*/}
-      <section className='hero__section pt-[60px] 2xl:h-[800px]'>
+      <section id='Inicio' className='hero__section pt-[60px] 2xl:h-[600px]' style={{ backgroundColor: '#072146' }}>
         <div className='container'>
-          <div className='flex flex-col lg:flex-row gap-[90px] items-center justify-between'>
+          <div className='flex flex-col lg:flex-row gap-[90px] items-center justify-between' >
             {/* ======== hero content ========*/}
             <div>
               <div className="lg:w-[570px]">
-                <h1 className='text-[36px] leading-[46px] text-headingColor font-[800] md:text-[600] md:leading-[70px]'>
+                <h1 className='text-[36px] leading-[46px] text-white font-[800] md:text-[600] md:leading-[70px]'>
                   ¿QUIÉNES SOMOS?
                 </h1>
-                <p className='text__para'>
-                  Una Compañía de TI con presencia regional y amplia experiencia en el sector empresarial, proveyendo soluciones ágiles e innovadoras de TI, e insertándonos en la operación de su organización, para prevenir, resolver y soportar temas críticos.
-                </p>
+                <p className='text__para text-white'>
+                  ITX es una empresa de servicios y soluciones en el área de TI, con presencia regional y amplia experiencia en el sector empresarial. 
+                  Nuestro Objetivo, es ayudar a las organizaciones a que consoliden un negocio más eficiente, competitivo y relevante a largo plazo, a través de un acompañamiento en su proceso de transformación digital, logrando un mejor y más eficiente uso de TI.                 </p>
                 {/*<button className='btn'>Solicita tu reclutador</button>*/}
               </div>
-
-              {/*<div className='mt-[30px] lg:mt-[70px] flex flex-col lg:flex-row lg:items-center gap-5 lg:gap-[30px]'>
-                <div>
-                  <h2 className='text-[36px] leading-[56px] lg:text-[44px] lg:leading-[54px] font-[700] text-headingColor'>
-                    10+
-                  </h2>
-                  <span className='w-[100px] h-2 bg-yellowColor rounded-full block mt-[-14px]'></span>
-                  <p className='text__para'>Años de experiencia</p>
-                </div>
-                <div>
-                  <h2 className='text-[36px] leading-[56px] lg:text-[44px] lg:leading-[54px] font-[700] text-headingColor'>
-                    800+
-                  </h2>
-                  <span className='w-[100px] h-2 bg-purpleColor rounded-full block mt-[-14px]'></span>
-                  <p className='text__para'>Desarrolladores</p>
-                </div>
-                <div>
-                  <h2 className='text-[36px] leading-[56px] lg:text-[44px] lg:leading-[54px] font-[700] text-headingColor'>
-                    100%
-                  </h2>
-                  <span className='w-[100px] h-2 bg-irisBlueColor rounded-full block mt-[-14px]'></span>
-                  <p className='text__para'>Clientes Satisfechos</p>
-                </div>
-  </div>*/}
 
             </div>
 
             {/* ======== hero content ========*/}
-            <div className='flex gap-[30px] justify-end'>
+            <div className='flex gap-30 justify-end'>
               <div>
-                <img className='w-[400px] h-[227px]' src={heroImg01} alt="" />
+                <img className='w-400 h-227 rounded-[15px] transform transition-transform shadow-md hover:shadow-lg hover:scale-105' src={heroImg01} alt="" />
               </div>
-              <div className='mt-[30px]'>
-                <img className='w-[350px] h-[233px] mb-[30px]' src={heroImg02} alt="" />
-                <img className='w-[350px] h-[183px]' src={heroImg03} alt="" />
-              </div>
-
+              
             </div>
           </div>
         </div>
@@ -97,102 +77,23 @@ const Home = () => {
 
         <div >
           <div className="flex items-center justify-center">
-            <img className='w-[768px] h-[312px]' src={exp} alt="" />
+            <img className='responsive-image' src={exp} alt="" />
           </div>
 
-          {/*
-      <div className='py-[30px] px-5'>
-        <div className="flex items-center justify-center">
-          <img src={icon01} alt="" />
-        </div>
-
-        <div className="mt-[30px]">
-          <h2 className='text-[26px] leading-9 text-headingColor font-[700] text-center'>
-            Encuentra un Dev
-          </h2>
-          <p className='text-[16px] text-center leading-7 text-textColor font-[400] mt-4'>
-          Recibiremos tus requerimentos de talento tech y alinearemos nuestra base de talentos con los perfiles solicitados. Nuestros algoritmos harán el trabajo por ti.
-        </p>
-
-        <Link
-        to='/developers'
-        className='w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-yellowColor hover:border-none'
-        >
-          <BsArrowRight className='group-hover:text-white w-6 h-5'/>
-        </Link>
-        </div>
-
-
-      </div>
-
-      <div className='py-[30px] px-5'>
-        <div className="flex items-center justify-center">
-          <img src={icon02} alt="" />
-        </div>
-
-        <div className="mt-[30px]">
-          <h2 className='text-[26px] leading-9 text-headingColor font-[700] text-center'>
-            Busca por país
-          </h2>
-          <p className='text-[16px] text-center leading-7 text-textColor font-[400] mt-4'>
-          Recibiremos tus requerimentos de talento tech y alinearemos nuestra base de talentos con los perfiles solicitados. Nuestros algoritmos harán el trabajo por ti.
-        </p>
-
-        <Link
-        to='/developers'
-        className='w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-yellowColor hover:border-none'
-        >
-          <BsArrowRight className='group-hover:text-white w-6 h-5'/>
-        </Link>
-        </div>
-
-
-      </div>
-
-      <div className='py-[30px] px-5'>
-        <div className="flex items-center justify-center">
-          <img src={icon03} alt="" />
-        </div>
-
-        <div className="mt-[30px]">
-          <h2 className='text-[26px] leading-9 text-headingColor font-[700] text-center'>
-            Pide una cita
-          </h2>
-          <p className='text-[16px] text-center leading-7 text-textColor font-[400] mt-4'>
-          Recibiremos tus requerimentos de talento tech y alinearemos nuestra base de talentos con los perfiles solicitados. Nuestros algoritmos harán el trabajo por ti.
-        </p>
-
-        <Link
-        to='/developers'
-        className='w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-yellowColor hover:border-none'
-        >
-          <BsArrowRight className='group-hover:text-white w-6 h-5'/>
-        </Link>
-        </div>
-
-
-      </div>
-        */}
+          
         </div>
       </section>
 
-      {/* ======== end section ========*/}
-
-
-      {/* ======== about section ========*/}
-      <About />
-      {/* ======== end about section ========*/}
-
 
       {/* ======== Services section ========*/}
-      <section>
+      <section id='Plataforma de servicios' style={{ backgroundColor: '#072146' }}>
         <div className="container">
           <div className="xl:w-[470px] mx-auto">
-            <h2 className="heading text-center">
-              Nuestros servicios de reclutamiento
+            <h2 className="heading text-center text-white">
+              Plataforma de servicios
             </h2>
             <p className='text__para text-center'>
-              Explora nuestra base de datos con +2k desarrolladores y desarrolladoras; Nuestros algoritmos harán el trabajo.
+
             </p>
           </div>
           <ServiceList />
@@ -202,103 +103,148 @@ const Home = () => {
       </section>
       {/* ======== end section ========*/}
 
-      {/* ======== features section ========*/}
-      <section>
-        <div className="container">
-          <div className="flex items-center justify-between flex-col lg:flex-row">
-            <div className="xl:w-[670px]">
-              <h2 className='heading'>
-                Obtenga una asesoría virtual
-              </h2>
-              <ul className='pl-4'>
-                <li className="text__para">
-                  1. Contrato directo con desarrolladores
-                </li>
-                <li className="text__para">
-                  2. Encuentra recursos con valores y personalidad
-                </li>
-                <li className="text__para">
-                  3. Si no estás conforme con el desempeño lo reemplazamos sin ningún costo
-                </li>
-              </ul>
-              <Link to="/">
-                <button className='btn'>Ver más...</button>
-              </Link>
-            </div>
-
-
-            {/* ======== features image ========*/}
-            <div className="relative z-10 xl:w-[770px] flex justify-end mt-[50px] lg:mt-0">
-              <img src={featureImg} className='w-3/4' alt="" />
-
-              <div className="w-[150px] lg:w-[248px] bg-white absolute bottom-[50px] left-0 md:bottom-[100px] md:left-5 z-20 p-2 pb-3 lg:pt-4 lg:px-4 lg:pb-[26px] rounded-[10px] ">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-[6px] lg:gap-3">
-                    <p className="text-[10px] leading-[10px] lg:text-[14px] lg:leading-5 text-headingColor font-[600]">
-                      Lun, 21
-                    </p>
-                    <p className="text-[10px] leading-[10px] lg:text-[14px] lg:leading-5 text-headingColor font-[600]">
-                      11:30am
-                    </p>
-                  </div>
-                  <span className="text-[10px] leading-[10px] lg:text-[14px] flex justify-center bg-celesteColor rounded py-1 px-[6px] lg:py-3 lg:px-[9px]">
-                    <img src={videoIcon} className='w-3/4' alt="" />
-                  </span>
-
-                </div>
-
-                <div className='w-[65px] lg:w-[96px] bg-[#CCF0F3] py-1 px-2 lg:py-[6px] lg:px-[10px] text-[8px] leading-[8px] lg:text-[12px] lg:leading-4 text-irisBlueColor font-[500] mt-2 lg:mt-4 rounded-full'>
-                  Asesoría
-                </div>
-
-                <div className='flex items-center gap-[6px] lg:gap-[10px] mt-2 lg:mt-[18px]'>
-                  <img src={avatarIcon} alt="" />
-                  <h4 className='text-[10px] leading-3 lg:text-[16px] lg:leading-[22px] font-[700] text-headingColor'>
-                    Camilo Mejía
-                  </h4>
-                </div>
-
-              </div>
-            </div>
-          </div>
-
-          <DevList />
-        </div>
-      </section>
-
-      {/* ======== end section ========*/}
-
-      <section>
-        <div className="container">
-          <div className="flex justify-between gap-[50px] lg:gap-0">
-            <div className='w-1/2 hidden md:block'>
-              <img src={faqImg} alt="" />
-            </div>
-
-            <div className='w-fill md:w-1/2'>
-              <h2 className='heading'>Preguntas más frecuentes</h2>
-              <FaqsList />
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      <section>
+   
+      
+      <section id='Aliados' >
         <div className="container">
           <div className="mx-auto">
             <h2 className='heading text-center'>
-              Lo que dicen de nosotros
+              Aliados
             </h2>
-            <p className='text__para text-center'>
-            Explora nuestra base de datos con +2k desarrolladores y desarrolladoras
-            </p>
+
           </div>
 
           <Testimonial />
-          
+
         </div>
       </section>
+
+
+      <section className='bg-[#f4f4f4]'>
+        <div className="container ">
+          <div className="mx-auto">
+            <h2 className='heading text-center'>
+              Certificaciones
+            </h2>
+
+          </div>
+
+          <Certificaciones />
+
+        </div>
+      </section>
+
+
+
+<section
+      id='Contacto'
+      style={{
+        display: 'flex',
+        width: '100%',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
+      <div
+        style={{
+          width: '50%',
+          padding: '20px',
+        }}
+      >
+        <div
+          style={{
+            maxWidth: '500px',
+            margin: 'auto',
+          }}
+        >
+          <h2 className='heading text-center' style={{ display: 'block', fontWeight: 'bold' ,textShadow: '1px 1px 1px rgba(0, 0, 0, 0.3)'}}>Contacto</h2>
+
+    <form action="https://formsubmit.co/norman.baca@itxlatam.com" method="POST"  style={{ fontFamily: 'Arial, sans-serif'}}>
+      <div style={{ marginBottom: '10px' }}>
+        <label htmlFor='nombre' style={{ display: 'block', fontWeight: 'bold' ,textShadow: '1px 1px 1px rgba(0, 0, 0, 0.3)'}}>Nombre:</label>
+        <input type='text' id='nombre' name='nombre' style={inputStyles} required />
+      </div>
+
+      <div style={{ marginBottom: '10px' }}>
+        <label htmlFor='empresa' style={{ display: 'block', fontWeight: 'bold' ,textShadow: '1px 1px 1px rgba(0, 0, 0, 0.3)'}}>Empresa:</label>
+        <input type='text' id='empresa' name='empresa' style={inputStyles} required />
+      </div>
+
+      <div style={{ marginBottom: '10px' }}>
+        <label htmlFor='correo' style={{ display: 'block', fontWeight: 'bold' ,textShadow: '1px 1px 1px rgba(0, 0, 0, 0.3)'}}>Correo Electrónico:</label>
+        <input type='email' id='correo' name='correo' style={inputStyles} required />
+      </div>
+
+      <div style={{ marginBottom: '10px' }}>
+        <label htmlFor='departamento' style={{ display: 'block', fontWeight: 'bold' ,textShadow: '1px 1px 1px rgba(0, 0, 0, 0.3)'}}>Departamento:</label>
+        <select id='departamento' name='departamento' style={inputStyles} required>
+          <option value='ventas'>Ventas</option>
+          <option value='soporte'>Soporte</option>
+          <option value='tecnologia'>Tecnología</option>
+          <option value='finanzas'>Finanzas</option>
+          <option value='recursos_humanos'>Recursos Humanos</option>
+          <option value='Otro'>Otro</option>
+          {/* Agrega más opciones aquí */}
+        </select>
+      </div>
+
+      <div style={{ marginBottom: '10px' }}>
+        <label htmlFor='celular' style={{ display: 'block', fontWeight: 'bold' ,textShadow: '1px 1px 1px rgba(0, 0, 0, 0.3)'}}>Celular:</label>
+        <input type='tel' id='celular' name='celular' style={inputStyles} />
+      </div>
+
+      <div style={{ marginBottom: '10px' }}>
+        <label htmlFor='tema' style={{ display: 'block', fontWeight: 'bold' ,textShadow: '1px 1px 1px rgba(0, 0, 0, 0.3)'}}>Tema:</label>
+        <select id='tema' name='tema' style={inputStyles} required>
+          <option value='comercial'>Comercial</option>
+          <option value='soporte'>Soporte</option>
+          <option value='ciberseguridad'>Ciberseguridad</option>
+          <option value='desarrollo'>Desarrollo</option>
+          <option value='Otro'>Otro</option>
+          {/* Agrega más opciones aquí */}
+        </select>
+      </div>
+
+      <div style={{ marginBottom: '10px' }}>
+        <label htmlFor='mensaje' style={{ display: 'block', fontWeight: 'bold' ,textShadow: '1px 1px 1px rgba(0, 0, 0, 0.3)'}}>Mensaje:</label>
+        <textarea id='mensaje' name='mensaje'  style={inputStyles} required></textarea>
+      </div>
+      
+      <input type='submit' value='Enviar' style={buttonStyles} />
+    </form>
+
+
+        </div>
+      </div>
+
+      <div
+        style={{
+          width: '50%',
+          padding: '20px',
+        }}
+      >
+        <div
+          style={{
+            maxWidth: '100%',
+          }}
+        >
+          <iframe
+            src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.032701169887!2d-84.10469892512954!3d9.931234590170693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0fcacdfdb6d97%3A0xf35790826dbd35c9!2sOficentro%20Ejecutivo%20la%20Sabana!5e0!3m2!1ses-419!2scr!4v1702663669440!5m2!1ses-419!2scr'
+            width='90%'
+            height='500'
+            style={{ border: '0' }}
+            allowFullScreen=''
+            loading='lazy'
+            referrerPolicy='no-referrer-when-downgrade'
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+
+ 
+
+
     </>
   )
 }

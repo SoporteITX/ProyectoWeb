@@ -13,7 +13,8 @@ export default {
         irisBlueColor:"#01B5C5",
         headingColor:"#181A1E",
         textColor:"#4E545F",
-        celesteColor:"#00a8eb"
+        celesteColor:"#00a8eb",
+        verdeColor: "#64b3e9"
       },
 
       boxShadow:{

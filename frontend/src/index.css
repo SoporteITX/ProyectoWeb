@@ -13,8 +13,9 @@
 @layer components{
     
     .container{
-        @apply max-w-full w-[1440px] px-5 mx-auto
+        @apply max-w-full w-[1440px] px-5 mx-auto 
     }
+    
     .btn{
         @apply bg-celesteColor py-[15px] px-[35px] rounded-[50px] text-white font-[600] mt-[38px]
     }
@@ -24,9 +25,29 @@
     .text__para{
         @apply text-[18px] leading-[30px] font-[400] text-textColor mt-[18px]
     }
-    /*.header{
-        @apply bg-[url('./assets/images/mask.png')] bg-no-repeat bg-center bg-cover w-full h-[100px] leading-[100px]
+    
+    .responsive-image {
+        max-width: 100%;
+        height: auto;
+        width: 100%;
+        /* Otros estilos que desees aplicar */
+      }
+      
+      /* Media query para pantallas de hasta 14 pulgadas (por ejemplo, 1920x1080) */
+      @media (min-width: 1366px) {
+        .responsive-image {
+          max-width: 920px;
+          max-height: 403px;
+          margin-top: 50px;
+        }
+      }
+
+    .header{
+        background-color: #043262;
+        
+        
     }
+    /*
     .hero__section{
         @apply bg-[url('./assets/images/hero-bg.png')] bg-no-repeat bg-center bg-cover
 }*/
@@ -42,10 +63,14 @@
 }
 
 @media only screen and (max-width:768px) {
-    .heading{
-        @apply text-[26px] leading-[36px]
-    }
-    .text__para{
-        @apply text-[16px] leading-7 mt-3
-    }
+    .heading {
+        font-size: 26px;
+        line-height: 36px;
+      }
+
+      .text__para {
+        font-size: 16px;
+        line-height: 1.5;
+        margin-top: 3px;
+}
 }
